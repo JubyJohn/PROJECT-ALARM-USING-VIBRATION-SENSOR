@@ -1,0 +1,27 @@
+void setup() 
+{
+  Serial.begin(9600);
+  pinMode(D0,INPUT);
+  pinMode(D1,OUTPUT);
+  pinMode(D2,OUTPUT);
+}
+
+void loop() 
+{
+  int x;
+  x=digitalRead(D0);
+  Serial.println(x);
+  if(x==1)
+  {
+    digitalWrite(D2,HIGH);
+    digitalWrite(D1,HIGH);
+    delay(100);
+  }
+  else
+  {
+    digitalWrite(D2,LOW);
+    digitalWrite(D1,LOW);
+    delay(100);
+  }
+  
+}
